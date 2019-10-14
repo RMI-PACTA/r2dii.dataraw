@@ -1,0 +1,9 @@
+{
+    "path" : "~/GitHub/2DegreesInvesting/r2dii.dataraw/data-raw",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
