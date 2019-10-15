@@ -37,19 +37,20 @@
 #' @examples
 #' data_dictionary
 #'
-#' new_dataset <- tibble::tibble(x = 1, y = "a")
+#' new_dataset <- tibble::tibble(x = 1L, y = "a")
 #' create_data_dictionary(new_dataset)
 "data_dictionary"
 
 #' @rdname data_dictionary
 #' @export
-create_data_dictionary <- function(dataset) {
-  dataset_name <- rlang::quo_text(rlang::enquo(dataset))
-  column_names <- names(dataset)
+create_data_dictionary <- function(data) {
+  dataset <- rlang::quo_text(rlang::enquo(data))
+  column <- names(data)
 
   tibble::tibble(
-    dataset = dataset_name,
-    column = column_names,
-    definition = NA_character_
+    definition = NA_character_,
+    column = column,
+    typeof = purrr::map_chr(data, ~typeof(.x)),
+    dataset = dataset,
   )
 }
