@@ -1,6 +1,0 @@
-dataset,column,definition
-NACE_classification,original_code,Original NACE code (character)
-NACE_classification,code,Formatted NACE code removing periods (integer)
-NACE_classification,code_level,Level of granularity of NACE code (integer)
-NACE_classification,sector,Associated 2dii sector (character)
-NACE_classification,borderline,Flag indicating if 2dii sector and classification code are a borderline match (boolean)

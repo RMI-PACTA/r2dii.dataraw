@@ -5,14 +5,14 @@
 \alias{data_dictionary}
 \alias{create_data_dictionary}
 \title{Data dictionary}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 21 rows and 3 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 30 rows and 4 columns.}
 \usage{
 data_dictionary
 
-create_data_dictionary(dataset)
+create_data_dictionary(data)
 }
 \arguments{
-\item{dataset}{A dataframe.}
+\item{data}{A dataframe from which to create the data dictionary.}
 }
 \value{
 A \link[tibble:tibble]{tibble::tibble}.
@@ -29,24 +29,25 @@ datasets.
 \details{
 You may combine \code{create_data_dictionary()} with \code{datapasta::tribble_paste()}.
 For example, this code:\preformatted{library(r2dii.dataraw)
-new_data <- tibble::tibble(x = 1, y = "a")
+new_data <- tibble::tibble(x = 1L, y = "a")
 
+# install.packages("datapasta")
 datapasta::tribble_paste(
   create_data_dictionary(new_data)
 )
 }
 
 outputs this text so you can conveniently fill the \code{definition} column:\preformatted{tibble::tribble(
-  ~dataset,   ~column, ~definition,
-  "new_data",     "x",          NA,
-  "new_data",     "y",          NA
+  ~definition, ~column,     ~typeof,     ~dataset,
+  NA,          "x",         "integer",   "new_data",
+  NA,          "y",         "character", "new_data"
 )
 }
 }
 \examples{
 data_dictionary
 
-new_dataset <- tibble::tibble(x = 1, y = "a")
+new_dataset <- tibble::tibble(x = 1L, y = "a")
 create_data_dictionary(new_dataset)
 }
 \seealso{

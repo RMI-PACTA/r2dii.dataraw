@@ -11,8 +11,9 @@
 #'
 #' ```
 #' library(r2dii.dataraw)
-#' new_data <- tibble::tibble(x = 1, y = "a")
+#' new_data <- tibble::tibble(x = 1L, y = "a")
 #'
+#' # install.packages("datapasta")
 #' datapasta::tribble_paste(
 #'   create_data_dictionary(new_data)
 #' )
@@ -22,13 +23,13 @@
 #'
 #' ```
 #' tibble::tribble(
-#'   ~dataset,   ~column, ~definition,
-#'   "new_data",     "x",          NA,
-#'   "new_data",     "y",          NA
+#'   ~definition, ~column,     ~typeof,     ~dataset,
+#'   NA,          "x",         "integer",   "new_data",
+#'   NA,          "y",         "character", "new_data"
 #' )
 #' ```
 #'
-#' @param dataset A dataframe.
+#' @param data A dataframe from which to create the data dictionary.
 #'
 #' @family demo datasets
 #'
