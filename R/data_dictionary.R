@@ -1,14 +1,9 @@
-#' Data dictionary
-#'
-#' * `data_dictionary()` is a dataset that defines the columns of other r2dii
-#' datasets.
-#'
-#' @param data A dataframe.
+#' A dataset that defiles the columns of r2dii datasets.
 #'
 #' @family demo datasets
-#'
 #' @return A [tibble::tibble].
 #'
+#' @export
 #' @examples
 #' data_dictionary()
 data_dictionary <- function() {
@@ -19,13 +14,18 @@ data_dictionary <- function() {
     get_inst_extdata("isic_classification.csv"),
   )
 
-  dplyr::arrange(out, dataset, column)
+  dplyr::arrange(out, .data$dataset, .data$column)
 }
 
 path_inst_extdata <- function(regexp = NULL) {
-  fs::dir_ls(system.file("extdata", package = "r2dii.dataraw"), regexp = regexp)
+  fs::dir_ls(
+    system.file("extdata", package = "r2dii.dataraw"),
+    regexp = regexp
+  )
 }
 
 get_inst_extdata <- function(regexp = NULL) {
-  suppressMessages(readr::read_csv(path_inst_extdata(regexp)))
+  suppressMessages(
+    readr::read_csv(path_inst_extdata(regexp))
+  )
 }

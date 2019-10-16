@@ -1,5 +1,3 @@
-library(dplyr)
-
 test_that("data_dictionary hasn't changed", {
   expect_known_value(
     data_dictionary(), "ref-data_dictionary",
@@ -20,6 +18,6 @@ test_that("data_dictionary defines all its names", {
 
   expect_equal(nrow(dd_definitions), 4L)
 
-  dd_columns <- dd_definitions %>% pull(column) %>% sort()
+  dd_columns <- sort(dd_definitions$column)
   expect_equal(dd_columns, sort(names(data_dictionary())))
 })
