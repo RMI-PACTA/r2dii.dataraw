@@ -14,7 +14,7 @@ test_that("data_dictionary has the expected names", {
 
 test_that("data_dictionary defines all its names", {
   dd_definitions <- data_dictionary() %>%
-    filter(dataset == "data_dictionary")
+    dplyr::filter(.data$dataset == "data_dictionary")
 
   expect_equal(nrow(dd_definitions), 4L)
 
