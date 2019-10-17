@@ -16,8 +16,8 @@ A dataset that defiles the columns of r2dii datasets
 
 To extend the output of \code{data_dictionary()} so that it includes
 the \code{definition} and \code{typeof} each \code{column} of a new \code{dataset},
-you should fill the Google Sheet at \link{http://bit.ly/data_dictionary_template},
-then create a new dataset issue at \link{http://bit.ly/new-dataset-issue}.
+you should fill the Google Sheet at \url{http://bit.ly/data_dictionary_template},
+then create a new dataset issue at \url{http://bit.ly/new-dataset-issue}.
 }
 
 \examples{
