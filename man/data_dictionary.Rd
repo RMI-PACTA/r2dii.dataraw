@@ -2,7 +2,7 @@
 % Please edit documentation in R/data_dictionary.R
 \name{data_dictionary}
 \alias{data_dictionary}
-\title{A dataset that defiles the columns of r2dii datasets.}
+\title{A dataset that defiles the columns of r2dii datasets}
 \usage{
 data_dictionary()
 }
@@ -10,8 +10,16 @@ data_dictionary()
 A \link[tibble:tibble]{tibble::tibble}.
 }
 \description{
-A dataset that defiles the columns of r2dii datasets.
+A dataset that defiles the columns of r2dii datasets
 }
+\section{Extending the data dictionary}{
+
+To extend the output of \code{data_dictionary()} so that it includes
+the \code{definition} and \code{typeof} each \code{column} of a new \code{dataset},
+you should fill the Google Sheet at \link{http://bit.ly/data_dictionary_template},
+then create a new dataset issue at \link{http://bit.ly/new-dataset-issue}.
+}
+
 \examples{
 data_dictionary()
 }
