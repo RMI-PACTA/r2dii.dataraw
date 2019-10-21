@@ -1,8 +1,8 @@
 from,to
-and,&
-och,&
-en,&
-und,&
+ and , & 
+ och , & 
+ en , & 
+ und , & 
 (pte),
 (pvt),
 (pjsc),
@@ -40,7 +40,7 @@ groep,grp
 generation,gen
 investment,invest
 financial,fin
-spolka z,sp z
+spolka z ,sp z 
 ograniczona odpowiedzialnoscia,oo
 sp z oo,spzoo
 sp z o o,spzoo
