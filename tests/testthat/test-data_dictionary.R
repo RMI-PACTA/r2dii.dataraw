@@ -6,6 +6,7 @@ test_that("data_dictionary defines the expected objects", {
   expected_datasets <- c(
     "data_dictionary",
     "loanbook",
+    "ald",
     "nace_classification",
     "isic_classification",
     "name_reductions"
