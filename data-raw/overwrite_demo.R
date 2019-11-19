@@ -1,0 +1,4 @@
+path <- here::here("data-raw/overwrite.csv")
+overwrite_demo <- remove_rownames_column(readr::read_csv(path))
+
+usethis::use_data(overwrite_demo, overwrite = TRUE)
