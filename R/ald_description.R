@@ -5,7 +5,7 @@
 #' additions or retirements.
 #'
 #' @name ald_description
-#' @seealso [data_dictionary]
+#' @seealso [data_dictionary], [ald_demo].
 #' @family generic datasets
 #' @examples
 #' library(dplyr)
