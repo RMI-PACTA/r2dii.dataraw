@@ -18,6 +18,7 @@ data_dictionary() \%>\%
 \link{data_dictionary}, \link{ald_demo}.
 
 Other generic datasets: 
-\code{\link{loanbook_description}}
+\code{\link{loanbook_description}},
+\code{\link{market_description}}
 }
 \concept{generic datasets}
