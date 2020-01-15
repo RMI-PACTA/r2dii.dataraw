@@ -1,0 +1,10 @@
+dataset,column,typeof,definition
+portfolio,Investor.Name,character,Investor Name.
+portfolio,Portfolio.Name,character,Portfolio Name
+portfolio,Scenario,character,Identifies the scenario applied to calculate production “under the scenario”. 
+portfolio,ScenarioGeography,character,"A grouping/filtering variable based on the country where production is located. Every country is mapped to one or more of the following regional ScenarioGeographies: Global, OECD, Non-OECD, North America, Europe, and Asia Pacific."
+portfolio,Allocation,character,Identifies the allocation method used for allocating some portion of the production of an entire company (pulled from ALD) to the company’s securities held in the portfolio. Also referred to as the Accounting Principle. 
+portfolio,Year,integer,Year. 
+portfolio,Sector,character,"Identifies the sector of production, based on the asset-level data."
+portfolio,Plan.Sec.EmissionsFactor,double,Emissions Factor in CO2/production units for the given sector. This is the weighted average (by production) of Plan.EmissionsFactor for all technologies within the sector.
+portfolio,Scen.Sec.EmissionsFactor,double,Emissions Factor consistent with the given Scenario in CO2/production units for the given sector. This is the weighted average (by production) of Scen.EmissionsFactor for all technologies within the sector.

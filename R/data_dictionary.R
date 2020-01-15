@@ -15,10 +15,14 @@
 data_dictionary <- function() {
   out <- dplyr::bind_rows(
     get_inst_extdata("data_dictionary.csv"),
-    get_inst_extdata("loanbook.csv"),
+
     get_inst_extdata("ald.csv"),
-    get_inst_extdata("nace_classification.csv"),
-    get_inst_extdata("isic_classification.csv")
+    get_inst_extdata("loanbook.csv"),
+    get_inst_extdata("market.csv"),
+    get_inst_extdata("portfolio.csv"),
+
+    get_inst_extdata("isic_classification.csv"),
+    get_inst_extdata("nace_classification.csv")
   )
 
   dplyr::arrange(out, .data$dataset, .data$column)
@@ -32,7 +36,13 @@ path_inst_extdata <- function(regexp = NULL) {
 }
 
 get_inst_extdata <- function(regexp = NULL) {
-  suppressMessages(
-    readr::read_csv(path_inst_extdata(regexp))
-  )
+  path <- path_inst_extdata(regexp)
+  if (identical(length(path), 0L)) {
+    stop(
+      "Can't find '", regexp, "' in inst/.\n",
+      "Did you forget to place ", regexp, " in inst/?",
+      call. = FALSE
+    )
+  }
+  suppressMessages(readr::read_csv(path))
 }

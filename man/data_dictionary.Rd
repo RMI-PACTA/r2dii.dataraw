@@ -27,6 +27,8 @@ data_dictionary()
 Other demo datasets: 
 \code{\link{ald_demo}},
 \code{\link{loanbook_demo}},
-\code{\link{overwrite_demo}}
+\code{\link{market_demo}},
+\code{\link{overwrite_demo}},
+\code{\link{portfolio_demo}}
 }
 \concept{demo datasets}

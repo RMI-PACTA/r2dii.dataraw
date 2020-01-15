@@ -1,12 +1,12 @@
 # Source withr::with_options
-with_options <- function (new, code) {
+with_options <- function(new, code) {
   old <- set_options(new_options = new)
   on.exit(set_options(old))
   force(code)
 }
 
 # Source withr::with_options
-set_options <- function (new_options) {
+set_options <- function(new_options) {
   do.call(options, as.list(new_options))
 }
 
@@ -82,4 +82,3 @@ use_newdata_checklist <- function() {
     update {ui_code('expect_known_value()')}"
   )
 }
-

@@ -4,6 +4,7 @@ language: R
 sudo: false
 cache: packages
 warnings_are_errors: false
+latex: false
 
 matrix:
   include:
@@ -17,4 +18,3 @@ matrix:
   - r: oldrel
   - r: 3.4
   - r: 3.3
-  - r: 3.2
