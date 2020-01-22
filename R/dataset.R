@@ -7,7 +7,7 @@
 #' # Quarter 2, 2019, contains the relevant data
 #' restore <- options(
 #'   r2dii_config = r2dii.utils::example_config("config_2019Q2.yml")
-#'  )
+#' )
 #'
 #' LoanMarket()
 #'
@@ -58,7 +58,7 @@ ALD.BV <- function() {
       Technology = as.character(Technology),
       Year = as.numeric(Year),
       ALD.Production = as.numeric(GrossProduction),
-      ALD.Production = dplyr::if_else(ALD.Production <=0, 0, ALD.Production),
+      ALD.Production = dplyr::if_else(ALD.Production <= 0, 0, ALD.Production),
       ALD.ProductionUnits = as.character(ProductionUnits),
       ALD.EmissionsFactor = as.numeric(AverageEmissionsFactor),
       ALD.link.Level = "Bloomberg_ID",
@@ -88,7 +88,7 @@ BALANCE.SHEET.DATA <- function() {
 #' }
 EQMarket.Size <- function() {
   path <- EQMARKET.DATA.PATH("EQMarketSizeBasedOnIndices.csv")
-  tibble::as_tibble(read_csv_(path))
+  as_tibble(read_csv_(path))
 }
 
 #' Dataset
@@ -125,11 +125,11 @@ DebtMarket <- function() {
 #' @family possible_snapshots
 #' @examples
 #' \dontrun{
-#' if(interactive()) PHYSICAL.RISK.EQ()
+#' if (interactive()) PHYSICAL.RISK.EQ()
 #' }
 PHYSICAL.RISK.EQ <- function() {
   path <- MASTER.DATA.PATH("PortCheck_MasterData_Risk_Ownership.rda")
-  tibble::as_tibble(readr::read_rds(path))
+  as_tibble(readr::read_rds(path))
 }
 
 #' Dataset
@@ -142,7 +142,7 @@ PHYSICAL.RISK.EQ <- function() {
 #' }
 PHYSICAL.RISK.CB <- function() {
   path <- MASTER.DATA.PATH("PortCheck_MasterData_Risk_Debt.rda")
-  tibble::as_tibble(readr::read_rds(path))
+  as_tibble(readr::read_rds(path))
 }
 
 #' Dataset
@@ -162,8 +162,8 @@ SCENLong <- function() {
     dplyr::mutate(
       Sector = dplyr::case_when(
         .data$Units == "PJ" & .data$Scenario != "B2DS" ~ "Demand",
-        .data$Technology == "Coal"                     ~ "Coal",
-        .data$Technology %in% c("Oil","Gas")           ~ "Oil&Gas",
+        .data$Technology == "Coal" ~ "Coal",
+        .data$Technology %in% c("Oil", "Gas") ~ "Oil&Gas",
         TRUE ~ .data$Sector
       )
     ) %>%
@@ -196,8 +196,8 @@ SCEN <- function() {
     dplyr::mutate(
       Sector = dplyr::case_when(
         .data$Units == "PJ" & .data$Scenario != "B2DS" ~ "Demand",
-        .data$Technology == "Coal"                     ~ "Coal",
-        .data$Technology %in% c("Oil","Gas")           ~ "Oil&Gas",
+        .data$Technology == "Coal" ~ "Coal",
+        .data$Technology %in% c("Oil", "Gas") ~ "Oil&Gas",
         TRUE ~ .data$Sector
       )
     ) %>%
@@ -268,7 +268,7 @@ TYPE.RECEIPTS <- function() {
       grepl("Dutch Certificate", FIN.DATA()[["security_type"]]) |
       grepl("Foreign Share", FIN.DATA()[["security_type"]]) |
       grepl("CEDEAR", FIN.DATA()[["security_type"]]),
-    ]
+  ]
 }
 
 #' Dataset
@@ -292,7 +292,7 @@ Receipts <- function() {
       grepl("Dutch Certificate", FIN.DATA()[["security_type"]]) |
       grepl("Foreign Share", FIN.DATA()[["security_type"]]) |
       grepl("CEDEAR", FIN.DATA()[["security_type"]]),
-    ]
+  ]
 }
 
 #' Dataset
@@ -335,14 +335,14 @@ Indices <- function() {
   for (i in 1:length(Indexlist)) {
     IndexData <- use_legacy_names(read_csv_(Indexlist[i]))
 
-    if (exists("out")) {
-      out <- rbind(out, IndexData)
+    if (exists("out_indices")) {
+      out_indices <- rbind(out_indices, IndexData)
     } else {
-      out <- IndexData
+      out_indices <- IndexData
     }
   }
 
-  out
+  out_indices
 }
 
 use_legacy_names <- function(data) {
@@ -421,8 +421,8 @@ SCEN_raw <- function() {
   data <- read_csv_(SCENARIO.DATA.PATH(file))
 
   data %>%
-    tibble::as_tibble() %>%
+    as_tibble() %>%
     dplyr::filter(
-      !(.data$Technology %in% c("HydroCap","NuclearCap") & .data$Units == "PJ")
+      !(.data$Technology %in% c("HydroCap", "NuclearCap") & .data$Units == "PJ")
     )
 }

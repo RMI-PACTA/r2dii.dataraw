@@ -34,7 +34,7 @@ ALD.SPV <- function() {
       Year = Year,
       Technology = as.character(Technology),
       ALD.Production = Production,
-      ALD.Production = dplyr::if_else(ALD.Production <=0, 0, ALD.Production),
+      ALD.Production = dplyr::if_else(ALD.Production <= 0, 0, ALD.Production),
       ALD.ProductionUnits = as.character(ProductionUnits),
       ALD.EmissionsFactor = EmissionsFactor,
       ALD.link.Level = "Asset"
@@ -53,7 +53,16 @@ ALD.SPV <- function() {
 Fund.Data <- function() {
   file <- glue("FundsData{FINANCIAL.TIMESTAMP()}.rda")
   path <- FIN.DATA.PATH("Fund Data", file)
-  tibble::as_tibble(readr::read_rds(path))
+
+  # FIXME: ASK Klaus why this path does not exist:
+  # ... /Dropbox (2° Investing)/PortCheck/00_Data/02_FinancialData/
+  #  2019Q2/Fund Data/FundsData2019Q2.rda
+  # This other path, for example, does exist:
+  # ... /Dropbox (2° Investing)/PortCheck/00_Data/02_FinancialData/
+  #  2018Q4/Fund Data/FundsData2018Q4.rda
+  check_path(path)
+
+  as_tibble(readr::read_rds(path))
 }
 
 #' Dataset
@@ -107,7 +116,7 @@ ALD.CC <- function() {
       Year = as.numeric(Year),
       Technology = as.character(Technology),
       ALD.Production = as.numeric(GrossProduction),
-      ALD.Production = dplyr::if_else(ALD.Production <=0, 0, ALD.Production),
+      ALD.Production = dplyr::if_else(ALD.Production <= 0, 0, ALD.Production),
       ALD.ProductionUnits = as.character(ProductionUnits),
       ALD.EmissionsFactor = as.numeric(AverageEmissionsFactor),
       ALD.link.Level = "Company",
@@ -144,7 +153,7 @@ FundsTrusts <- function() {
       grepl("REIT", FIN.DATA()[["icb_subsector"]]) |
       grepl("Alternative Investment", FIN.DATA()[["icb_subsector"]]) |
       grepl("Limited Partnership", FIN.DATA()[["security_type"]]),
-    ]
+  ]
 }
 
 #' Dataset
@@ -167,7 +176,7 @@ ALD.CB <- function() {
       Technology = as.character(Technology),
       Year = as.numeric(Year),
       ALD.Production = as.numeric(BondLvlProduction),
-      ALD.Production = dplyr::if_else(ALD.Production <=0, 0, ALD.Production),
+      ALD.Production = dplyr::if_else(ALD.Production <= 0, 0, ALD.Production),
       ALD.ProductionUnits = as.character(ProductionUnits),
       ALD.EmissionsFactor = as.numeric(BondLvlEmissionsFactor),
       ALD.link.Level = "CorpBondTicker"
@@ -179,7 +188,7 @@ ALD.CB <- function() {
 set_columns_to_na_if_needed <- function(data) {
   # FIXME? https://github.com/2DegreesInvesting/Reference/issues/34
   names_diff <- setdiff(colnames(ALD.CC()), colnames(data))
-  data[ , names_diff] <- NA
+  data[, names_diff] <- NA
 
   data
 }

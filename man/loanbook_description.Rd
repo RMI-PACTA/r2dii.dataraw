@@ -12,10 +12,13 @@ is proprietary data.
 \examples{
 library(dplyr)
 
-data_dictionary \%>\%
+data_dictionary() \%>\%
   filter(dataset == "loanbook")
 }
 \seealso{
 \link{data_dictionary}
+
+Other generic datasets: 
+\code{\link{ald_description}}
 }
 \concept{generic datasets}

@@ -4,8 +4,12 @@
 \alias{take_snapshot}
 \title{Snapshots datasets and the configuration file}
 \usage{
-take_snapshot(datasets = NULL, destdir = NULL, overwrite = FALSE,
-  config = get_config())
+take_snapshot(
+  datasets = NULL,
+  destdir = NULL,
+  overwrite = FALSE,
+  config = get_config()
+)
 }
 \arguments{
 \item{datasets}{Character vector giving the name of a file (without
@@ -28,6 +32,7 @@ Returns \code{NULL}. It's called for its side effect.
 Snapshots datasets and the configuration file
 }
 \examples{
+\dontrun{
 library(r2dii.utils)
 
 # Use `config` to provide a local, custom configuration file, locally -- to
@@ -35,21 +40,25 @@ library(r2dii.utils)
 datasets <- "DebtMarketClimate"
 custom_config <- r2dii.utils::example_config("config-toy.yml")
 take_snapshot(
-  datasets, destdir = tempdir(), overwrite = TRUE, config = custom_config
- )
+  datasets,
+  destdir = tempdir(), overwrite = TRUE, config = custom_config
+)
 
 # Use `options(r2dii_config = <custom_config>)` to provide a custom
 # configuration file, globally -- to affect your entire R session
 restore <- options(r2dii_config = custom_config)
 take_snapshot(
-  datasets, destdir = tempdir(), overwrite = TRUE
+  datasets,
+  destdir = tempdir(), overwrite = TRUE
 )
 
 options(restore)
 }
+}
 \seealso{
 \link{get_config}.
 
-Other handle snapshots: \code{\link{possible_snapshots}}
+Other handle snapshots: 
+\code{\link{possible_snapshots}()}
 }
 \concept{handle snapshots}

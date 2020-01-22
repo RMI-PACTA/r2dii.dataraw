@@ -11,36 +11,53 @@ Dataset to bridge from country to all existing bench regions it is in
 }
 \examples{
 if (dropbox_exists()) {
-library(dplyr)
+  library(dplyr)
 
-BENCH.REGIONS()
+  BENCH.REGIONS()
 
-# The `CountryISO` of Namibia is the literal string "NA"
-BENCH.REGIONS() \%>\%
-  filter(Country == "Namibia")
+  # The `CountryISO` of Namibia is the literal string "NA"
+  BENCH.REGIONS() \%>\%
+    filter(Country == "Namibia")
 }
 }
 \seealso{
-Other datasets in Reference: \code{\link{INDEX.REGIONS}}
+Other datasets in Reference: 
+\code{\link{INDEX.REGIONS}()}
 
-Other possible_snapshots: \code{\link{ALD.BV}},
-  \code{\link{ALD.CB}}, \code{\link{ALD.CC}},
-  \code{\link{ALD.EQ}}, \code{\link{ALD.SPV}},
-  \code{\link{BALANCE.SHEET.DATA}},
-  \code{\link{BicsSectorBridge}}, \code{\link{CB_OG}},
-  \code{\link{DebtMarketClimate}},
-  \code{\link{DebtMarket}}, \code{\link{EQMarket.Size}},
-  \code{\link{EQ_OG}}, \code{\link{FIN.DATA}},
-  \code{\link{Fund.Data}}, \code{\link{FundsTrusts}},
-  \code{\link{GROUPS.GOVT}}, \code{\link{INDEX.REGIONS}},
-  \code{\link{Indices}}, \code{\link{LoanMarketClimate}},
-  \code{\link{LoanMarket}}, \code{\link{PHYSICAL.RISK.CB}},
-  \code{\link{PHYSICAL.RISK.EQ}}, \code{\link{Receipts}},
-  \code{\link{RevenueSplit}}, \code{\link{SCENLong}},
-  \code{\link{SCEN}}, \code{\link{SEC.TYPE.BONDS}},
-  \code{\link{SectorBridge}}, \code{\link{TYPE.BONDS}},
-  \code{\link{TYPE.EQUITY}}, \code{\link{TYPE.OTHERS}},
-  \code{\link{TYPE.RECEIPTS}}, \code{\link{sector.bridge}}
+Other possible_snapshots: 
+\code{\link{ALD.BV}()},
+\code{\link{ALD.CB}()},
+\code{\link{ALD.CC}()},
+\code{\link{ALD.EQ}()},
+\code{\link{ALD.SPV}()},
+\code{\link{BALANCE.SHEET.DATA}()},
+\code{\link{BicsSectorBridge}()},
+\code{\link{CB_OG}()},
+\code{\link{DebtMarketClimate}()},
+\code{\link{DebtMarket}()},
+\code{\link{EQMarket.Size}()},
+\code{\link{EQ_OG}()},
+\code{\link{FIN.DATA}()},
+\code{\link{Fund.Data}()},
+\code{\link{FundsTrusts}()},
+\code{\link{GROUPS.GOVT}()},
+\code{\link{INDEX.REGIONS}()},
+\code{\link{Indices}()},
+\code{\link{LoanMarketClimate}()},
+\code{\link{LoanMarket}()},
+\code{\link{PHYSICAL.RISK.CB}()},
+\code{\link{PHYSICAL.RISK.EQ}()},
+\code{\link{Receipts}()},
+\code{\link{RevenueSplit}()},
+\code{\link{SCENLong}()},
+\code{\link{SCEN}()},
+\code{\link{SEC.TYPE.BONDS}()},
+\code{\link{SectorBridge}()},
+\code{\link{TYPE.BONDS}()},
+\code{\link{TYPE.EQUITY}()},
+\code{\link{TYPE.OTHERS}()},
+\code{\link{TYPE.RECEIPTS}()},
+\code{\link{sector.bridge}()}
 }
 \concept{datasets in Reference}
 \concept{possible_snapshots}

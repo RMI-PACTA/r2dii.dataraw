@@ -6,13 +6,13 @@
 #' @export
 #' @examples
 #' if (dropbox_exists()) {
-#' library(dplyr)
+#'   library(dplyr)
 #'
-#' BENCH.REGIONS()
+#'   BENCH.REGIONS()
 #'
-#' # The `CountryISO` of Namibia is the literal string "NA"
-#' BENCH.REGIONS() %>%
-#'   filter(Country == "Namibia")
+#'   # The `CountryISO` of Namibia is the literal string "NA"
+#'   BENCH.REGIONS() %>%
+#'     filter(Country == "Namibia")
 #' }
 BENCH.REGIONS <- function() {
   # C:\Users\Mauro\Dropbox (2° Investing)\2° Investing Team\People\Klaus\
@@ -26,7 +26,7 @@ BENCH.REGIONS <- function() {
         .data$CountryISO
       )
     ) %>%
-    tibble::as_tibble()
+    as_tibble()
 }
 
 #' Dataset to identify the equity index regions based on the MSCI factsheets
@@ -40,7 +40,7 @@ BENCH.REGIONS <- function() {
 #' @export
 #' @examples
 #' if (dropbox_exists()) {
-#' INDEX.REGIONS()
+#'   INDEX.REGIONS()
 #' }
 INDEX.REGIONS <- function() {
   # Online at https://github.com/2DegreesInvesting/Reference/blob/master/...
@@ -53,7 +53,8 @@ INDEX.REGIONS <- function() {
         .data$Country == "Namibia" & is.na(.data$CountryISO),
         "NA",
         .data$CountryISO
-    )) %>%
+      )
+    ) %>%
     purrr::modify_if(is.factor, as.character)
 }
 
@@ -65,7 +66,7 @@ INDEX.REGIONS <- function() {
 #' @export
 #' @examples
 #' if (dropbox_exists()) {
-#' sector.bridge()
+#'   sector.bridge()
 #' }
 sector.bridge <- function() {
   # Online at https://github.com/2DegreesInvesting/Reference/blob/master/...
@@ -82,7 +83,7 @@ sector.bridge <- function() {
 #' @export
 #' @examples
 #' if (dropbox_exists()) {
-#' SectorBridge()
+#'   SectorBridge()
 #' }
 SectorBridge <- function() {
   # Online at https://github.com/2DegreesInvesting/Reference/blob/master/...
@@ -99,7 +100,7 @@ SectorBridge <- function() {
 #' @export
 #' @examples
 #' if (dropbox_exists()) {
-#' BicsSectorBridge()
+#'   BicsSectorBridge()
 #' }
 BicsSectorBridge <- function() {
   # Online at https://github.com/2DegreesInvesting/Reference/blob/master/...
@@ -116,7 +117,7 @@ BicsSectorBridge <- function() {
 #' @export
 #' @examples
 #' if (dropbox_exists()) {
-#' RevenueSplit()
+#'   RevenueSplit()
 #' }
 RevenueSplit <- function() {
   # Online at https://github.com/2DegreesInvesting/Reference/blob/master/...
@@ -133,7 +134,7 @@ RevenueSplit <- function() {
 # reading the data from a more stable directory.
 path_reference <- function(...) {
   r2dii.utils::path_dropbox_2dii(
-    glue::glue("2{degrees()} Investing Team"),
+    glue("2{degrees()} Investing Team"),
     "People",
     "Klaus",
     "GitHub",

@@ -4,7 +4,7 @@
 \name{loanbook_demo}
 \alias{loanbook_demo}
 \title{A loanbook dataset for demonstration}
-\format{An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 320 rows and 18 columns.}
+\format{An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 320 rows and 19 columns.}
 \usage{
 loanbook_demo
 }
@@ -18,7 +18,10 @@ loanbook_demo
 \seealso{
 \link{data_dictionary}
 
-Other demo datasets: \code{\link{data_dictionary}}
+Other demo datasets: 
+\code{\link{ald_demo}},
+\code{\link{data_dictionary}()},
+\code{\link{overwrite_demo}}
 }
 \concept{demo datasets}
 \keyword{datasets}
