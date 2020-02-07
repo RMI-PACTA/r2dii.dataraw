@@ -9,7 +9,8 @@ test_that("data_dictionary defines the expected objects", {
     "ald",
     "scenario",
     "nace_classification",
-    "isic_classification"
+    "isic_classification",
+    "iso_codes"
   )
 
   expect_equal(sort(datasets), sort(expected_datasets))
