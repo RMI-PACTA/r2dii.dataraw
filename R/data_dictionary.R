@@ -21,7 +21,8 @@ data_dictionary <- function() {
     get_inst_extdata("scenario.csv"),
     get_inst_extdata("nace_classification.csv"),
     get_inst_extdata("isic_classification.csv"),
-    get_inst_extdata("iso_codes.csv")
+    get_inst_extdata("iso_codes.csv"),
+    get_inst_extdata("region_isos.csv")
   )
 
   dplyr::arrange(out, .data$dataset, .data$column)
