@@ -26,6 +26,7 @@ data_dictionary()
 \seealso{
 Other demo datasets: 
 \code{\link{ald_demo}},
+\code{\link{iso_codes}},
 \code{\link{loanbook_demo}},
 \code{\link{overwrite_demo}},
 \code{\link{scenario_demo}}
