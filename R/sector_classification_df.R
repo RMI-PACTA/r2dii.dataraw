@@ -18,11 +18,7 @@
 #'  ) %>%
 #'  dplyr::arrange(column)
 sector_classification_df <- function() {
-  pkg <- "package:r2dii.dataraw"
-  check_is_attached(pkg)
-
-  pkg %>%
-    enlist_datasets(pattern = "_classification$") %>%
+  enlist_datasets("r2dii.dataraw", pattern = "_classification$") %>%
     purrr::imap(~ dplyr::mutate(.x, code_system = toupper(.y))) %>%
     purrr::map(
       dplyr::select,
@@ -39,23 +35,12 @@ sector_classification_df <- function() {
     dplyr::mutate(code_system = gsub("_CLASSIFICATION", "", .data$code_system))
 }
 
-check_is_attached <- function(pkg) {
-  is_attached <- any(grepl(pkg, search()))
-
-  if (!is_attached) {
-    package <- sub("package:", "", pkg)
-    rlang::abort(glue::glue("{package} must be attached.\nRun `library({package})`."))
-  }
-
-  invisible(pkg)
-}
-
 enlist_datasets <- function(package, pattern) {
-  datasets_name <- grep(pattern, exported_data("r2dii.dataraw"), value = TRUE)
+  dataset_names <- grep(pattern, exported_data(package), value = TRUE)
 
-  datasets_name %>%
-    purrr::map(~ get(.x, envir = as.environment(package))) %>%
-    purrr::set_names(datasets_name)
+  dataset_names %>%
+    mget(envir = as.environment(glue("package:{package}"))) %>%
+    purrr::set_names(dataset_names)
 }
 
 exported_data <- function(package) {
