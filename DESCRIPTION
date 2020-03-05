@@ -40,13 +40,13 @@ Imports:
     utils,
     vroom
 Suggests: 
+    covr,
     datasets,
     here,
     rmarkdown,
     roxygen2,
     testthat (>= 2.1.0),
-    withr,
-    covr
+    withr
 Remotes: 
     2DegreesInvesting/r2dii.utils
 Encoding: UTF-8
