@@ -1,3 +1,21 @@
+#' A view of available sector classification datasets
+#'
+#' @seealso [nace_classification], [data_dictionary()].
+#'
+#' @return A [tibble::tibble()]. The column `code_system` names one of the
+#'   classification systems that 2dii uses. All other columns are defined at
+#'   [data_dictionary()].
+#' @export
+#'
+#' @examples
+#' sector_classification_df()
+#'
+#' data_dictionary() %>%
+#'   dplyr::filter(
+#'     grepl("_classification", dataset),
+#'     column %in% c("sector", "borderline", "code", "code_system")
+#'  ) %>%
+#'  dplyr::arrange(column)
 sector_classification_df <- function() {
   pkg <- "package:r2dii.dataraw"
   check_is_attached(pkg)
