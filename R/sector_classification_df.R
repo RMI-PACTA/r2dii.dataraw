@@ -1,6 +1,7 @@
 #' A view of available sector classification datasets
 #'
-#' @seealso [nace_classification], [data_dictionary()].
+#' @seealso [data_dictionary()].
+#' @family datasets for bridging sector classification codes
 #'
 #' @return A [tibble::tibble()]. The column `code_system` names one of the
 #'   classification systems that 2dii uses. All other columns are defined at

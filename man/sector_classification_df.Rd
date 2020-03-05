@@ -25,5 +25,9 @@ data_dictionary() \%>\%
  dplyr::arrange(column)
 }
 \seealso{
-\link{nace_classification}, \code{\link[=data_dictionary]{data_dictionary()}}.
+\code{\link[=data_dictionary]{data_dictionary()}}.
+
+Other datasets for bridging sector classification codes: 
+\code{\link{classification_bridge}}
 }
+\concept{datasets for bridging sector classification codes}
