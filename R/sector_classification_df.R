@@ -6,6 +6,7 @@
 #' @return A [tibble::tibble()]. The column `code_system` names one of the
 #'   classification systems that 2dii uses. All other columns are defined at
 #'   [data_dictionary()].
+#'
 #' @export
 #'
 #' @examples
@@ -36,11 +37,15 @@ sector_classification_df <- function() {
 }
 
 enlist_datasets <- function(package, pattern) {
-  dataset_names <- grep(pattern, exported_data(package), value = TRUE)
+  # Preserve attached packages
+  packages <- sub("package:", "", grep("package", search(), value = TRUE))
+  on.exit(purrr::walk(packages, library, character.only = TRUE), add = TRUE)
 
-  dataset_names %>%
-    mget(envir = as.environment(glue("package:{package}"))) %>%
-    purrr::set_names(dataset_names)
+  withr::with_package(package, {
+      data <- grep(pattern, exported_data(package), value = TRUE)
+      purrr::set_names(mget(data, inherits = TRUE), data)
+    }
+  )
 }
 
 exported_data <- function(package) {
