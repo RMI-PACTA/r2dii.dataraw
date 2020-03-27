@@ -4,7 +4,9 @@
 \name{scenario_demo}
 \alias{scenario_demo}
 \title{A climate scenario dataset for demonstration}
-\format{An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 1323 rows and 7 columns.}
+\format{
+An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 1323 rows and 7 columns.
+}
 \usage{
 scenario_demo
 }
