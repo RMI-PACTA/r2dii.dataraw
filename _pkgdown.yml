@@ -39,10 +39,6 @@ reference:
     contents:
       - has_concept("handle snapshots")
 
-  - title: Demo datasets
-    contents:
-      - has_concept("demo datasets")
-
   - title: Datasets to look up sector-classification codes
     contents:
       - has_concept("datasets for bridging sector classification codes")
