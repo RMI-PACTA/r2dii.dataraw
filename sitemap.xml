@@ -103,30 +103,6 @@
     <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/TYPE.RECEIPTS.html</loc>
   </url>
   <url>
-    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/ald_demo.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/ald_description.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/classification_bridge.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/data_dictionary.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/iso_codes.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/loanbook_demo.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/loanbook_description.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/overwrite_demo.html</loc>
-  </url>
-  <url>
     <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/pipe.html</loc>
   </url>
   <url>
@@ -136,16 +112,7 @@
     <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/r2dii.dataraw-package.html</loc>
   </url>
   <url>
-    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/region_isos.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/scenario_demo.html</loc>
-  </url>
-  <url>
     <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/sector.bridge.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/sector_classification_df.html</loc>
   </url>
   <url>
     <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/take_snapshot.html</loc>
