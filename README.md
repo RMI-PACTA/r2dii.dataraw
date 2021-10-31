@@ -1,3 +1,4 @@
+**[Deprecated] Note this repo is no longer maintained, and is archived for historical context only.**
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
