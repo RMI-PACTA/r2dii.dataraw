@@ -1,3 +1,6 @@
+**[Deprecated] Note this repo is no longer maintained, and is archived for historical context only.**
+
+For anything related to preparing data for the PACTA methodology see instead https://github.com/2DegreesInvesting/data_preparation (private).
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
